@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Bottle -->
+        <rect x="51.2" y="89.6" width="153.6" height="128.0" rx="30.72" ry="30.72" stroke="#B463FF" fill="none"/>
+        
+        <!-- Inner bottle -->
+        <rect x="66.56" y="97.28" width="122.88" height="107.52" rx="20.48" ry="20.48" stroke="#BAE6FD" stroke-width="12.0" fill="none"/>
+        
+        <!-- Liquid -->
+        <path d="M 66.56 166.4 
+                 C 92.16 153.6, 117.76 179.2, 143.36 158.72 
+                 C 168.96 138.24, 189.44 168.96, 189.44 168.96 
+                 L 189.44 204.8 L 66.56 204.8 Z" fill="#34D399" fill-opacity="0.7"/>
+        
+        <!-- Neck -->
+        <rect x="102.4" y="64.0" width="51.2" height="25.6" rx="5.12" stroke="#3B82F6" fill="none"/>
+        
+        <!-- Cap -->
+        <rect x="97.28" y="30.72" width="61.44" height="30.72" rx="10.24" stroke="#3B82F6" fill="none"/>
+        
+        <!-- Hose -->
+        <path d="M 153.6 71.68 Q 204.8 51.2, 209.92 81.92" stroke="#FF6188" fill="none"/>
+        
+        <!-- Bulb -->
+        <circle cx="209.92" cy="81.92" r="4587.52" stroke="#FFB84D" fill="none"/>
+    </svg>
