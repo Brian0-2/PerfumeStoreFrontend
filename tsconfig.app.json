@@ -9,16 +9,17 @@
 
     "baseUrl": "src",
     "paths": {
-      "@/Components/*" : ["Components/*"],
-      "@/Views/*" : ["Views/*"],
-      "@/Data/*" : ["Data/*"],
-      "@/Layouts/*" : ["Layouts/*"],
-      "@/Api/*" : ["Api/*"],
-      "@/Types/*" : ["Types/*"],
-      "@/Lib/*" : ["Lib/*"],
-      "@/Utils/*" : ["Utils/*"],
-      "@/Locales/*" : ["Locales/*"],
-      "@/Hooks/*" : ["Hooks/*"],
+      "@/components/*" : ["components/*"],
+      "@/data/*" : ["data/*"],
+      "@/views/*" : ["views/*"],
+      "@/ui/*" : ["ui/*"],
+      "@/layouts/*" : ["layouts/*"],
+      "@/api/*" : ["api/*"],
+      "@/types/*" : ["types/*"],
+      "@/lib/*" : ["lib/*"],
+      "@/utils/*" : ["utils/*"],
+      "@/locales/*" : ["locales/*"],
+      "@/hooks/*" : ["hooks/*"],
     },
 
     /* Bundler mode */

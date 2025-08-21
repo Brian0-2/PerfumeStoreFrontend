@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router";
 import AuthLayout from "@/Layouts/AuthLayout";
 import IndexView from "./Views/IndexView";
-import LoginView from "./Views/Auth/LoginView";
+import LoginView from "./Views/auth/LoginView";
 
 export default function router() {
   return (
