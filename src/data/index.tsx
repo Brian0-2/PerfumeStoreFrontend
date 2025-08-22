@@ -1,163 +1,45 @@
 import { Key, Mail, MessageCircle, Search, ShoppingCart, User } from "lucide-react";
+import { 
+  GiDelicatePerfume, GiPerfumeBottle, GiHeartBottle, GiFragrance, GiSpiralBloom 
+} from "react-icons/gi";
+import { IoDiamond, IoSparklesOutline } from "react-icons/io5";
+import { PiFlowerLight, PiFlowerTulip } from "react-icons/pi";
+import { FaLeaf, FaCrown } from "react-icons/fa";
+import { FaSprayCanSparkles } from "react-icons/fa6";
+import { SiDior } from "react-icons/si";
+import { TbPerfume } from "react-icons/tb";
 
-export const brands = [
-  {
-    id: 1,
-    name: "Chanel",
-    icon: "C̄C̄",
-    description: "Elegancia francesa desde 1910",
-    signature: "No. 5, Coco Mademoiselle",
-    colors: {
-      primary: "0 0% 8%", // Negro elegante Chanel
-      secondary: "0 0% 95%", // Blanco perla
-      accent: "45 90% 55%" // Dorado elegante
-    },
-    gradient: "linear-gradient(135deg, hsl(0, 0%, 8%) 0%, hsl(0, 0%, 18%) 100%)"
-  },
-  {
-    id: 2,
-    name: "Dior",
-    icon: "DIOR",
-    description: "Lujo y sofisticación parisina",
-    signature: "Sauvage, J'adore, Miss Dior",
-    colors: {
-      primary: "0 0% 97%", // Blanco premium Dior
-      secondary: "210 15% 85%", // Plata premium
-      accent: "220 30% 25%" // Azul marino elegante
-    },
-    gradient: "linear-gradient(135deg, hsl(0, 0%, 97%) 0%, hsl(210, 20%, 92%) 100%)"
-  },
-  {
-    id: 3,
-    name: "Versace",
-    icon: "⚡",
-    description: "Glamour italiano inconfundible",
-    signature: "Bright Crystal, Eros",
-    colors: {
-      primary: "45 95% 48%", // Dorado Versace auténtico
-      secondary: "0 0% 8%", // Negro profundo
-      accent: "0 0% 95%" // Blanco elegante
-    },
-    gradient: "linear-gradient(135deg, hsl(45, 95%, 48%) 0%, hsl(45, 85%, 38%) 100%)"
-  },
-  {
-    id: 4,
-    name: "Tom Ford",
-    icon: "TF",
-    description: "Modernidad y elegancia contemporánea",
-    signature: "Black Orchid, Tobacco Vanille",
-    colors: {
-      primary: "0 0% 3%", // Negro profundo Tom Ford
-      secondary: "45 85% 45%", // Dorado rico
-      accent: "0 0% 97%" // Blanco puro
-    },
-    gradient: "linear-gradient(135deg, hsl(0, 0%, 3%) 0%, hsl(0, 0%, 12%) 100%)"
-  },
-  {
-    id: 5,
-    name: "Armani",
-    icon: "GA",
-    description: "Refinamiento italiano",
-    signature: "Acqua di Gio, Code",
-    colors: {
-      primary: "220 55% 18%", // Azul marino Armani
-      secondary: "220 25% 85%", // Azul claro elegante
-      accent: "0 0% 95%" // Blanco premium
-    },
-    gradient: "linear-gradient(135deg, hsl(220, 55%, 18%) 0%, hsl(220, 45%, 28%) 100%)"
-  },
-  {
-    id: 6,
-    name: "Hermès",
-    icon: "H",
-    description: "Artesanía francesa de lujo",
-    signature: "Terre d'Hermès, Twilly",
-    colors: {
-      primary: "20 95% 45%", // Naranja Hermès icónico
-      secondary: "20 85% 25%", // Naranja profundo
-      accent: "0 0% 95%" // Blanco elegante
-    },
-    gradient: "linear-gradient(135deg, hsl(20, 95%, 45%) 0%, hsl(20, 85%, 35%) 100%)"
-  },
-  {
-    id: 7,
-    name: "Creed",
-    icon: "⚔️",
-    description: "Perfumería artesanal británica",
-    signature: "Aventus, Silver Mountain",
-    colors: {
-      primary: "140 45% 25%", // Verde británico elegante
-      secondary: "140 25% 15%", // Verde profundo
-      accent: "45 85% 48%" // Dorado refinado
-    },
-    gradient: "linear-gradient(135deg, hsl(140, 45%, 25%) 0%, hsl(140, 35%, 20%) 100%)"
-  },
-  {
-    id: 8,
-    name: "Yves Saint Laurent",
-    icon: "YSL",
-    description: "Vanguardia francesa",
-    signature: "Black Opium, Libre",
-    colors: {
-      primary: "0 0% 5%", // Negro YSL icónico
-      secondary: "45 85% 45%", // Dorado YSL
-      accent: "0 0% 95%" // Blanco elegante
-    },
-    gradient: "linear-gradient(135deg, hsl(0, 0%, 5%) 0%, hsl(45, 75%, 25%) 100%)"
-  },
-  {
-    id: 9,
-    name: "Prada",
-    icon: "△",
-    description: "Innovación italiana de lujo",
-    signature: "Luna Rossa, Candy",
-    colors: {
-      primary: "0 0% 8%", // Negro Prada
-      secondary: "0 0% 88%", // Plata Prada
-      accent: "0 85% 45%" // Rojo Prada
-    },
-    gradient: "linear-gradient(135deg, hsl(0, 0%, 8%) 0%, hsl(0, 0%, 22%) 100%)"
-  },
-  {
-    id: 10,
-    name: "Gucci",
-    icon: "🐉",
-    description: "Excentricidad italiana moderna",
-    signature: "Bloom, Guilty",
-    colors: {
-      primary: "140 65% 22%", // Verde Gucci auténtico
-      secondary: "0 85% 38%", // Rojo Gucci
-      accent: "45 85% 48%" // Dorado Gucci
-    },
-    gradient: "linear-gradient(135deg, hsl(140, 65%, 22%) 0%, hsl(0, 85%, 38%) 100%)"
-  },
-  {
-    id: 11,
-    name: "Carolina Herrera",
-    icon: "CH",
-    description: "Elegancia venezolana",
-    signature: "Good Girl, 212",
-    colors: {
-      primary: "320 85% 88%", // Rosa elegante
-      secondary: "320 45% 18%", // Rosa profundo
-      accent: "45 85% 48%" // Dorado refinado
-    },
-    gradient: "linear-gradient(135deg, hsl(320, 85%, 88%) 0%, hsl(320, 55%, 75%) 100%)"
-  },
-  {
-    id: 12,
-    name: "Dolce & Gabbana",
-    icon: "D&G",
-    description: "Pasión siciliana",
-    signature: "Light Blue, The One",
-    colors: {
-      primary: "0 0% 8%", // Negro elegante
-      secondary: "45 85% 45%", // Dorado siciliano
-      accent: "200 85% 45%" // Azul mediterráneo
-    },
-    gradient: "linear-gradient(135deg, hsl(0, 0%, 8%) 0%, hsl(45, 75%, 28%) 100%)"
-  }
+export const perfumes = [
+  { id: 1, name: "Carolina Herrera", icon: <GiHeartBottle />, description: "Elegancia venezolana", signature: "Good Girl, 212", gradient: "bg-gradient-to-br from-pink-400 to-pink-600" },
+  { id: 2, name: "Lancome", icon: <GiFragrance />, description: "Lujo francés", signature: "La Vie Est Belle, Tresor", gradient: "bg-gradient-to-br from-pink-300 to-pink-500" },
+  { id: 3, name: "Dior", icon: <SiDior />, description: "Lujo y sofisticación parisina", signature: "Sauvage, J'adore, Miss Dior", gradient: "bg-gradient-to-br from-zinc-800 to-gray-600" },
+  { id: 4, name: "Dolce & Gabbana", icon: <GiPerfumeBottle />, description: "Pasión siciliana", signature: "Light Blue, The One", gradient: "bg-gradient-to-br from-neutral-900 to-yellow-700" },
+  { id: 5, name: "Tom Ford", icon: <FaSprayCanSparkles />, description: "Modernidad y elegancia contemporánea", signature: "Black Orchid, Tobacco Vanille", gradient: "bg-gradient-to-br from-neutral-950 to-neutral-800" },
+  { id: 6, name: "Guerlain", icon: <GiSpiralBloom />, description: "Artesanía francesa de lujo", signature: "Shalimar, Mon Guerlain", gradient: "bg-gradient-to-br from-yellow-300 to-yellow-500" },
+  { id: 7, name: "Marc Jacobs", icon: <TbPerfume />, description: "Glamour moderno", signature: "Daisy, Decadence", gradient: "bg-gradient-to-br from-yellow-400 to-yellow-600" },
+  { id: 8, name: "Jean Paul Gaultier", icon: <GiPerfumeBottle />, description: "Excentricidad francesa", signature: "Le Male, Classique", gradient: "bg-gradient-to-br from-blue-200 to-blue-400" },
+  { id: 9, name: "Saint Laurent", icon: <FaCrown />, description: "Vanguardia francesa", signature: "Black Opium, Libre", gradient: "bg-gradient-to-br from-neutral-950 to-yellow-800" },
+  { id: 10, name: "Moschino", icon: <IoSparklesOutline />, description: "Innovación italiana", signature: "Toy 2, Cheap & Chic", gradient: "bg-gradient-to-br from-pink-300 to-pink-500" },
+  { id: 11, name: "Versace", icon: <IoDiamond />, description: "Glamour italiano inconfundible", signature: "Bright Crystal, Eros", gradient: "bg-gradient-to-br from-yellow-400 to-yellow-600" },
+  { id: 12, name: "Valentino", icon: <PiFlowerTulip />, description: "Estilo italiano elegante", signature: "Valentina, Donna", gradient: "bg-gradient-to-br from-red-400 to-red-600" },
+  { id: 13, name: "Prada", icon: <GiDelicatePerfume />, description: "Innovación italiana de lujo", signature: "Luna Rossa, Candy", gradient: "bg-gradient-to-br from-neutral-900 to-neutral-700" },
+  { id: 14, name: "Calvin Klein", icon: <GiPerfumeBottle />, description: "Minimalismo estadounidense", signature: "CK One, Eternity", gradient: "bg-gradient-to-br from-gray-400 to-gray-600" },
+  { id: 15, name: "Ariana Grande", icon: <PiFlowerLight />, description: "Pop y glamour", signature: "Cloud, Thank U Next", gradient: "bg-gradient-to-br from-pink-300 to-pink-500" },
+  { id: 16, name: "Giorgio Armani", icon: <GiPerfumeBottle />, description: "Lujo italiano", signature: "Acqua di Gio, Si", gradient: "bg-gradient-to-br from-blue-950 to-blue-800" },
+  { id: 17, name: "Paco Rabanne", icon: <GiFragrance />, description: "Diseño audaz", signature: "1 Million, Lady Million", gradient: "bg-gradient-to-br from-yellow-300 to-yellow-600" },
+  { id: 18, name: "DKNY", icon: <FaLeaf />, description: "Frescura urbana", signature: "Be Delicious, Fresh Blossom", gradient: "bg-gradient-to-br from-green-400 to-green-600" },
+  { id: 19, name: "Coach", icon: <GiHeartBottle />, description: "Elegancia americana", signature: "Coach Dreams, Floral", gradient: "bg-gradient-to-br from-gray-400 to-gray-600" },
+  { id: 20, name: "Nautica", icon: <FaLeaf />, description: "Frescura marina", signature: "Blue, Voyage", gradient: "bg-gradient-to-br from-blue-300 to-blue-500" },
+  { id: 21, name: "Gucci", icon: <GiPerfumeBottle />, description: "Excentricidad italiana moderna", signature: "Bloom, Guilty", gradient: "bg-gradient-to-br from-green-800 to-red-700" },
+  { id: 22, name: "Burberry", icon: <GiPerfumeBottle />, description: "Clásico británico", signature: "My Burberry, Her", gradient: "bg-gradient-to-br from-yellow-300 to-yellow-600" },
+  { id: 23, name: "Hugo Boss", icon: <GiDelicatePerfume />, description: "Estilo alemán", signature: "Boss Bottled, Nuit", gradient: "bg-gradient-to-br from-gray-700 to-gray-900" },
+  { id: 24, name: "Lacoste", icon: <GiPerfumeBottle />, description: "Deportivo y fresco", signature: "L.12.12, Eau de Lacoste", gradient: "bg-gradient-to-br from-green-400 to-green-600" },
+  { id: 25, name: "Givenchy", icon: <GiDelicatePerfume />, description: "Elegancia francesa", signature: "Irresistible, Gentlemen Only", gradient: "bg-gradient-to-br from-gray-800 to-gray-900" },
+  { id: 26, name: "Tommy Hilfiger", icon: <GiFragrance />, description: "Clásico americano", signature: "Tommy, Tommy Girl", gradient: "bg-gradient-to-br from-red-500 to-blue-500" },
+  { id: 27, name: "Ralph Lauren", icon: <GiPerfumeBottle />, description: "Estilo elegante", signature: "Romance, Polo Blue", gradient: "bg-gradient-to-br from-blue-700 to-blue-900" },
+  { id: 28, name: "Lattafa", icon: <TbPerfume />, description: "Perfumes árabes de lujo", signature: "Raghba, Ana Abiyedh", gradient: "bg-gradient-to-br from-yellow-400 to-yellow-600" }
 ];
+
 
  export const steps = [
     {

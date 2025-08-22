@@ -2,7 +2,7 @@ import { companyInfo } from "@/data/index";
 import { useAuth } from "@/hooks/useAuth";
 import { Menu, X, User, LogOut, Package } from "lucide-react";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "@/ui/Button";
 
@@ -35,8 +35,8 @@ export default function Header() {
                         href="/"
                         className="flex items-center space-x-2 transition duration-300 hover:scale-105"
                     >
-                        <div className="w-10 h-10 bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-600 rounded-lg flex items-center justify-center shadow-md">
-                            <span className="text-yellow-900 font-bold text-lg">P</span>
+                        <div className="w-10 h-10 bg-gradient-to-r from-[#CFD6E2E6] via-[#CFD6E2E6] to-yellow-600 rounded-lg flex items-center justify-center shadow-md">
+                            <img src="/perfume_icon.svg" alt="Logo image" />
                         </div>
                         <span className="font-bold text-xl text-gray-900 hidden sm:block">
                             {companyInfo.name}
