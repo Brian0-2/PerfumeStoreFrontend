@@ -1,8 +1,7 @@
-import api from "@/lib/axios";
-import { AxiosError, isAxiosError } from "axios";
+import { isAxiosError } from "axios";
 import { userSchema, type UserLoginForm } from "../types";
 import { handleAxiosError } from "@/utils/handleErrors";
-
+import api from "@/lib/axios";
 
 export async function getUser() {
   try {

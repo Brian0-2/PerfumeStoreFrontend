@@ -7,14 +7,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import Button from "@/ui/Button";
 
 export default function Header() {
-    
+
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const navigate = useNavigate();
     const { data, logout } = useAuth();
 
     const handleLogout = () => {
         logout();
-        navigate("/");
         setIsMenuOpen(false);
     };
 

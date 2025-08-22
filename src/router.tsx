@@ -14,8 +14,8 @@ export default function router() {
           <Route path="/" index element={<IndexView />} />
         </Route>
         <Route path="/auth/login" element={<LoginView />} />
+        
         <Route path="*" element={<NotFound />} />
-
       </Routes>
     </BrowserRouter>
   )

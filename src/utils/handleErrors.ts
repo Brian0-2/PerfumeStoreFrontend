@@ -1,30 +1,23 @@
 import type { AxiosError } from "axios";
+import type { ServerErrorResponse } from "../types";
 
-type ServerError = {
-    success?: boolean;
-    message?: string;
-    errors?: { 
-        field?: string; 
-        message: string 
-    }[];
-};
+export const handleAxiosError = (error: AxiosError<ServerErrorResponse>): Error => {
+  if (error.request && !error.response) {
+    return new Error("No se pudo conectar con el servidor 🌐");
+  }
 
-export const handleAxiosError = (error: AxiosError<ServerError>) => {
-    if (error.request && !error.response) {
-        return new Error("No se pudo conectar con el servidor 🌐");
+  if (error.response) {
+    const data = error.response.data;
+
+    if (Array.isArray(data.errors) && data.errors.length > 0) {
+      const messages = data.errors.map((e) => e.message).join(" | ");
+      return new Error(messages);
     }
 
-    if (error.response) {
-        const data = error.response.data;
-
-        if (Array.isArray(data.errors) && data.errors.length > 0) {
-            return new Error(data.errors.map((e) => e.message).join(" | "));
-        }
-
-        if (data.message) {
-            return new Error(data.message);
-        }
+    if (data.message) {
+      return new Error(data.message);
     }
+  }
 
-    return new Error("Ocurrió un error inesperado ❌");
+  return new Error("Ocurrió un error inesperado ❌");
 };

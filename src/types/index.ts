@@ -10,7 +10,7 @@ export const authSchema = z.object({
   token: z.string().optional(),
 });
 
-/** Formularios */
+/** Forms */
 type Auth = z.infer<typeof authSchema>;
 export type UserLoginForm = Pick<Auth, 'email' | 'password'>;
 export type UserRegistrationForm = Pick<Auth, 'name' | 'email' | 'password' | 'password_confirmation'>;
@@ -29,3 +29,15 @@ export const userSchema = authSchema.pick({
 
 export type User = z.infer<typeof userSchema>;
 export type UserProfileForm = Pick<User, 'name' | 'email'>;
+
+// Server Responses
+interface FieldError {
+  field?: string;
+  message: string;
+}
+
+export type ServerErrorResponse = {
+  success: false;
+  message: string;
+  errors: FieldError[];
+}
