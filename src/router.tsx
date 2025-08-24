@@ -4,6 +4,10 @@ import IndexView from "@/views/IndexView";
 import LoginView from "@/views/auth/LoginView";
 import Sonner from "@/ui/Sonner";
 import NotFound from "@/views/NotFound";
+import ForgotPasswordView from "@/views/auth/ForgotPasswordView";
+import NewPasswordView from "@/views/auth/NewPasswordView";
+import AppCustomerLayout from "@/layouts/AppCustomerLayout";
+import IndexCustomerView from "@/views/customer/IndexCustomerView";
 
 export default function router() {
   return (
@@ -13,8 +17,14 @@ export default function router() {
         <Route element={<AuthLayout />}>
           <Route path="/" index element={<IndexView />} />
         </Route>
-        <Route path="/auth/login" element={<LoginView />} />
+        <Route element={<AppCustomerLayout />}>
+          <Route path="/customer" element={<IndexCustomerView />} />
+        </Route>
         
+        <Route path="/auth/login" element={<LoginView />} />
+        <Route path="/auth/forgot-password" element={<ForgotPasswordView />} />
+        <Route path="/auth/new-password/:token" element={<NewPasswordView />} />
+
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

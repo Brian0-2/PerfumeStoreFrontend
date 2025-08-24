@@ -1,15 +1,8 @@
-import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
-import Button from '@/ui/Button';
+import { Phone, Mail, MapPin } from 'lucide-react';
 import { companyInfo } from '@/data/index';
+import WhatsAppForm from './WhatsAppForm';
 
 export default function ContactSection() {
-
-  const handleWhatsApp = () => {
-    const message = "Hola, me interesa conocer más sobre sus productos y servicios.";
-    const url = `https://wa.me/${companyInfo.contact.whatsapp.replace(/\s+/g, '')}?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
-  };
-
   return (
     <section id="contact" className="py-16 bg-gray-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -71,14 +64,10 @@ export default function ContactSection() {
             </div>
 
             {/* WhatsApp Button */}
-            <Button
-              onClick={handleWhatsApp}
-              className="w-full sm:w-auto bg-green-600 hover:bg-green-500 text-white px-6 py-3 text-lg font-medium rounded-lg transition flex items-center justify-center"
-            >
-              <MessageCircle className="w-5 h-5 mr-2" />
-              WhatsApp
-            </Button>
-
+            <WhatsAppForm 
+              className='bg-green-600 text-white px-5 py-2 rounded-full shadow-md hover:bg-green-700 transition flex items-center gap-2'
+              text='Enviar Mensaje'
+            />
             <p className="text-sm text-gray-500 pt-4">
               Horarios de atención: Lunes a Sábado de 9:00 AM a 7:00 PM
             </p>
@@ -105,12 +94,11 @@ export default function ContactSection() {
             <div className="bg-[linear-gradient(135deg,#000000e6_20%,#6b21a8_80%)] rounded-2xl p-8 text-center text-white shadow-2xl">
               <h3 className="text-3xl font-bold mb-4">¿Listo para encontrar tu fragancia perfecta?</h3>
               <p className="mb-6 opacity-90 text-lg">Únete a más de 1000 clientes satisfechos que confían en nosotros</p>
-              <Button
-                onClick={handleWhatsApp}
-                className="bg-[#FFC107] hover:bg-[#FFB300] text-gray-900 px-6 py-3 text-lg font-semibold rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
-              >
-                Comenzar Ahora
-              </Button>
+                <WhatsAppForm
+                  className='bg-[#FFC107] hover:bg-[#FFB300] text-gray-900 px-6 py-3 text-lg font-semibold rounded-lg transition-all duration-300 shadow-md hover:shadow-lg flex items-center'
+                  text='Comenzar Ahora'
+                />
+
             </div>
 
 

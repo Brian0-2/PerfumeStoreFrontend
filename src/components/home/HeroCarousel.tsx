@@ -51,12 +51,6 @@ export default function HeroCarousel() {
                 <p className="text-lg sm:text-xl text-gray-100 max-w-2xl mx-auto leading-relaxed drop-shadow-sm">
                   {slide.description}
                 </p>
-
-                <div className="pt-6">
-                  <button className="px-8 py-3 bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 hover:from-yellow-500 hover:via-pink-600 hover:to-purple-700 text-gray-900 text-lg font-medium rounded shadow-lg transition-all transform hover:scale-105">
-                    {slide.cta}
-                  </button>
-                </div>
               </div>
             </div>
           </div>

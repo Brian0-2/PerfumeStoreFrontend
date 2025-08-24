@@ -10,7 +10,7 @@ export default function Header() {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const navigate = useNavigate();
-    const { data, logout } = useAuth();
+    const { data: user, logout } = useAuth();
 
     const handleLogout = () => {
         logout();
@@ -26,7 +26,7 @@ export default function Header() {
     ];
 
     return (
-        <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b shadow-lg">
+        <header className="fixed top-0 left-0 right-0 z-50 bg-white/70 backdrop-blur-md border-b shadow-lg">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     {/* Logo */}
@@ -57,7 +57,7 @@ export default function Header() {
 
                     {/* Auth Section */}
                     <div className="flex items-center space-x-4">
-                        {data ? (
+                        {user ? (
                             <div className="flex items-center space-x-2">
                                 <div className="hidden sm:flex items-center space-x-3">
                                     <div className="flex items-center space-x-2">
@@ -65,7 +65,7 @@ export default function Header() {
                                             <User className="w-4 h-4 text-gray-700" />
                                         </div>
                                         <span className="text-sm font-medium text-gray-800">
-                                            {data?.user?.name}
+                                            {user?.name}
                                         </span>
                                     </div>
 
@@ -90,12 +90,14 @@ export default function Header() {
 
                                 {/* Mobile user menu */}
                                 <div className="sm:hidden">
-                                    <Button
-                                        size="sm"
-                                        onClick={() => setIsMenuOpen(!isMenuOpen)}
-                                    >
-                                        <User className="w-5 h-5" />
-                                    </Button>
+                                    <div className="flex items-center space-x-2">
+                                        <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center">
+                                            <User className="w-4 h-4 text-gray-700" />
+                                        </div>
+                                        <span className="text-sm font-medium text-gray-800">
+                                            {user?.name}
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         ) : (
@@ -107,14 +109,6 @@ export default function Header() {
                                 >
                                     Iniciar Sesión
                                 </Button>
-                                <Button
-                                    size="sm"
-                                    onClick={() => navigate("/auth/login")}
-                                    className="bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-600 p-2 rounded-xl text-gray-900 hover:opacity-90 transition duration-300"
-                                >
-                                    <span className="hidden sm:inline">Acceder</span>
-                                    <User className="w-4 h-4 sm:hidden" />
-                                </Button>
                             </div>
                         )}
 
@@ -122,9 +116,9 @@ export default function Header() {
                         <Button
                             size="sm"
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
-                            className="md:hidden"
+                            className={`md:hidden ${isMenuOpen ? "bg-red-500 text-white rounded-full" : "bg-gray-200 text-gray-700 rounded-sm"}`}
                         >
-                            {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                            {isMenuOpen ? <X className="w-8 h-10" /> : <Menu className="w-8 h-10" />}
                         </Button>
                     </div>
                 </div>
@@ -143,13 +137,13 @@ export default function Header() {
                             />
 
                             <motion.div
-                                className="md:hidden fixed top-16 left-0 right-0 bg-white z-50 border-t shadow-lg"
+                                className="md:hidden fixed top-16 left-0 right-0 bg-black/70 z-50 border-t shadow-lg h-screen"
                                 initial={{ y: -50, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 exit={{ y: -50, opacity: 0 }}
                                 transition={{ duration: 0.3, ease: "easeOut" }}
                             >
-                                <div className="px-4 py-4 space-y-3">
+                                <div className="px-4 py-4 space-y-3 bg-white">
                                     {navItems.map((item) => (
                                         <a
                                             key={item.href}
@@ -161,7 +155,7 @@ export default function Header() {
                                         </a>
                                     ))}
 
-                                    {data && (
+                                    {user && (
                                         <div className="pt-3 border-t space-y-2">
                                             <Button
                                                 size="sm"

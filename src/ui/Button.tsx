@@ -19,7 +19,7 @@ export default function Button({ size = "md", onClick, className = "", children,
   return (
     <button
       type={type}
-      className={`${sizeClasses[size]} ${className} ${disabled ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'} rounded-md transition`}
+      className={`${sizeClasses[size]} ${className} ${disabled ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'}`}
       onClick={onClick}
       disabled={disabled}
     >

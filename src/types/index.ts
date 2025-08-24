@@ -2,18 +2,19 @@ import { z } from 'zod';
 
 /** Auth Users */
 export const authSchema = z.object({
-  name: z.string(),
-  email: z.string().email(),
-  password: z.string(),
-  password_confirmation: z.string().optional(),
+  name: z.string().optional(),
+  email: z.email().optional(),
+  password: z.string().optional(),
+  confirmPassword: z.string().optional(),
   current_password: z.string().optional(),
   token: z.string().optional(),
 });
 
 /** Forms */
 type Auth = z.infer<typeof authSchema>;
-export type UserLoginForm = Pick<Auth, 'email' | 'password'>;
-export type UserRegistrationForm = Pick<Auth, 'name' | 'email' | 'password' | 'password_confirmation'>;
+export type LoginForm = Pick<Auth, 'email' | 'password'>;
+export type ForgotPasswordForm = Pick<Auth, 'email'>;
+export type NewPasswordForm = Pick<Auth, 'password' | 'confirmPassword'>;
 
 /** Users */
 export const userSchema = authSchema.pick({

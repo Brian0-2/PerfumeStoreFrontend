@@ -23,7 +23,7 @@ export default function PerfumesSection() {
         </div>
 
         {/* Carrusel */}
-        <div className="overflow-hidden relative cursor-pointer bg-gray-100 py-6 px-2 rounded-3xl shadow-2xl" ref={emblaRef}>
+        <div className="overflow-hidden relative cursor-grab bg-gray-100 py-6 px-2 rounded-3xl shadow-2xl" ref={emblaRef}>
           <div className="flex">
             {perfumes.map((perfume) => (
               <div

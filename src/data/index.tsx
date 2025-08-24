@@ -81,7 +81,6 @@ export const heroSlides = [
     subtitle: "Descubre los perfumes más exclusivos del mundo",
     description: "Ofrecemos una selección curada de las mejores fragancias de marcas prestigiosas, garantizando autenticidad y calidad premium.",
     image: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=800&h=600&fit=crop",
-    cta: "Explorar Colección"
   },
   {
     id: 2,
@@ -89,15 +88,12 @@ export const heroSlides = [
     subtitle: "Expertos en fragancias con más de 10 años de experiencia",
     description: "Somos una boutique especializada en perfumes de alta gama, comprometidos con brindar una experiencia de compra única y personalizada.",
     image: "https://images.unsplash.com/photo-1563170351-be82bc888aa4?w=800&h=600&fit=crop",
-    cta: "Nuestra Historia"
   },
   {
     id: 3,
     title: "Qué Ofrecemos",
     subtitle: "Servicio personalizado y asesoría experta",
-    description: "Brindamos consultoría especializada para encontrar la fragancia perfecta, con servicio de apartado y seguimiento personalizado de pedidos.",
     image: "https://images.unsplash.com/photo-1594736797933-d0a8ba28a0ad?w=800&h=600&fit=crop",
-    cta: "Nuestros Servicios"
   }
 ];
 
@@ -275,9 +271,9 @@ export const companyInfo = {
     "Confianza y transparencia"
   ],
   contact: {
-    phone: "+52 55 1234 5678",
+    phone: "+523787313902",
     email: "info@essenceboutique.mx",
-    whatsapp: "+52 55 1234 5678",
+    whatsapp: "+523787313902",
     address: "Av. Presidente Masaryk 123, Polanco, CDMX"
   },
   social: {

@@ -1,9 +1,7 @@
-import { steps } from "@/data/index";
-import { MessageCircle } from "lucide-react";
+import { companyInfo, steps } from "@/data/index";
+import WhatsAppForm from "./WhatsAppForm";
 
 export default function HowItWorksSection() {
-
-
   return (
     <section id="how-it-works" className="py-16 sm:py-24 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -60,17 +58,12 @@ export default function HowItWorksSection() {
               de perfumes con total transparencia y seguridad.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <WhatsAppForm
+                className='bg-green-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-green-700 transition flex items-center gap-2 justify-center'
+                text='Comenzar Ahora'
+              />
               <a
-                href="https://wa.me/1234567890"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-8 py-4 bg-green-600 hover:bg-green-700 font-semibold rounded-xl shadow-lg hover:shadow-2xl transition-transform transform hover:scale-105"
-              >
-                <MessageCircle className="w-5 h-5 mr-2" />
-                Contactar por WhatsApp
-              </a>
-              <a
-                href="tel:+1234567890"
+                href={companyInfo.contact.phone ? `tel:${companyInfo.contact.phone.replace(/\s+/g, '')}` : '#'}
                 className="inline-flex items-center justify-center px-8 py-4 bg-white text-indigo-600 font-semibold rounded-xl shadow-lg hover:shadow-2xl transition-transform transform hover:scale-105"
               >
                 Llamar Ahora
