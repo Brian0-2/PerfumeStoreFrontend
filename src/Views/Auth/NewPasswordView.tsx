@@ -16,6 +16,7 @@ import CardHeader from "@/components/auth/CardHeader";
 import ErrorMessage from "@/ui/ErrorMessage";
 import type { NewPasswordForm } from "@/types/index";
 import { getPasswordStrength } from "@/utils/getPasswordStrength";
+import Forbidden from "../Forbidden";
 
 export default function NewPasswordView() {
     const [showConfirmPassword, setShowConfirmPassword] = useState<boolean>(false);
@@ -23,7 +24,7 @@ export default function NewPasswordView() {
     const { token } = useParams() as { token: string };
     const navigate = useNavigate();
 
-    const { data: tokenInfo, isError, error, isLoading } = useQuery({
+    const { data: tokenInfo, isError, isLoading, error } = useQuery({
         queryKey: ["token", token],
         queryFn: () => tokenConfirm(token),
         refetchOnWindowFocus: false,
@@ -51,7 +52,6 @@ export default function NewPasswordView() {
         },
     });
 
-    // Validador de fortaleza de contraseña
     const passwordStrength = getPasswordStrength(password || "");
 
     const handleForgotPassword = (formData: NewPasswordForm) => {
@@ -59,22 +59,11 @@ export default function NewPasswordView() {
         mutate(data);
     };
 
+    if(isError) return <Forbidden errorMessage={error.message} />;
+
     return (
         <Container>
             {isLoading && <LoadingSpinner size="lg" />}
-            {isError && (
-                <>
-                    <BackButton
-                        to="/auth/login"
-                        text="Volver al inicio de sesión"
-                    />
-                    <Card className="bg-white">
-                        <CardHeader title="Error" />
-                    <ErrorMessage>{error.message}</ErrorMessage>
-                    </Card>
-                </>
-            )}
-
             {tokenInfo && (
                 <>
                     {/* Back Button */}
@@ -83,14 +72,12 @@ export default function NewPasswordView() {
                         className="mb-6"
                         text="Volver al inicio de sesión"
                     />
-
                     {/* New Password Card */}
                     <Card className="bg-white sm:p-10">
                         <CardHeader
                             title="Nueva Contraseña"
                             subtitle="Ingresa tu nueva contraseña para completar la recuperación"
                         />
-
                         {/* Form */}
                         <form
                             onSubmit={handleSubmit(handleForgotPassword)}
@@ -137,7 +124,6 @@ export default function NewPasswordView() {
                                     <ErrorMessage>{errors.password.message}</ErrorMessage>
                                 )}
                             </div>
-
                             {/* Password Strength Indicator */}
                             {password && (
                                 <div className="space-y-2">
@@ -164,7 +150,6 @@ export default function NewPasswordView() {
                                     </div>
                                 </div>
                             )}
-
                             {/* Confirm Password */}
                             <div className="space-y-2">
                                 <Label
@@ -211,7 +196,6 @@ export default function NewPasswordView() {
                                     </ErrorMessage>
                                 )}
                             </div>
-
                             {/* Submit Button */}
                             <Button
                                 type="submit"
@@ -222,7 +206,6 @@ export default function NewPasswordView() {
                                 {isPending ? "Actualizando..." : "Actualizar Contraseña"}
                             </Button>
                         </form>
-
                         {/* Security Requirements */}
                         <div className="mt-6 p-4 bg-secondary/30 rounded-lg">
                             <h4 className="text-sm font-semibold text-primary mb-2">
@@ -230,22 +213,22 @@ export default function NewPasswordView() {
                             </h4>
                             <ul className="text-xs text-muted-foreground space-y-1">
                                 <li className={password!.length >= 8 ? "text-green-600" : ""}>
-                                    • Mínimo 8 caracteres
+                                    Mínimo 8 caracteres
                                 </li>
                                 <li
                                     className={/[A-Z]/.test(password || "") ? "text-green-600" : ""}
                                 >
-                                    • Una letra mayúscula
+                                    Una letra mayúscula
                                 </li>
                                 <li
                                     className={/[a-z]/.test(password || "") ? "text-green-600" : ""}
                                 >
-                                    • Una letra minúscula
+                                    Una letra minúscula
                                 </li>
                                 <li
                                     className={/[0-9]/.test(password || "") ? "text-green-600" : ""}
                                 >
-                                    • Un número
+                                    Un número
                                 </li>
                             </ul>
                         </div>

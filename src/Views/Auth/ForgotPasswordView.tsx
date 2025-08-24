@@ -3,6 +3,8 @@ import { useMutation } from "@tanstack/react-query";
 import { Mail } from "lucide-react";
 import { forgotPassword } from "@/api/AuthAPI";
 import { toast } from "@/ui/Sonner";
+import type { ForgotPasswordForm } from '@/types/index';
+import { Link } from 'react-router-dom';
 import Label from "@/ui/Label";
 import Input from "@/ui/Input";
 import Button from "@/ui/Button";
@@ -12,12 +14,11 @@ import Container from "@/components/auth/Container";
 import BackButton from "@/components/auth/BackButton";
 import Card from "@/components/auth/Card";
 import CardHeader from "@/components/auth/CardHeader";
-import type { Auth } from '@/types/index';
-import { Link } from 'react-router-dom';
+
 
 export default function ForgotPasswordView() {
 
-  const initialValues: Pick<Auth, 'email'> = { email: '' };
+  const initialValues: ForgotPasswordForm = { email: '' };
   const { register, handleSubmit, formState: { errors } } = useForm({ defaultValues: initialValues });
 
   const { mutate, isPending } = useMutation({
@@ -30,22 +31,17 @@ export default function ForgotPasswordView() {
     }
   });
 
-  const handleForgotPassword = (formData: Pick<Auth, 'email'>) => mutate(formData);
+  const handleForgotPassword = (formData: ForgotPasswordForm) => mutate(formData);
 
   return (
     <Container>
-
       <BackButton to="/" className="mb-6" text="Volver al inicio" />
-
       {/* Login Card */}
       <Card className="bg-white sm:p-10">
-
         {/* Header */}
         <CardHeader title="Restablecer Contraseña" subtitle="Ingresa tu email y te enviaremos un enlace para restablecer tu contraseña" />
-
         {/* Form */}
         <form onSubmit={handleSubmit(handleForgotPassword)} className="w-full space-y-5 sm:space-y-6">
-
           {/* Email */}
           <div className="space-y-2">
             <Label htmlFor="email" className="text-black font-medium">Correo Electrónico</Label>
@@ -64,14 +60,12 @@ export default function ForgotPasswordView() {
             </div>
             {errors.email && <ErrorMessage>{errors.email.message}</ErrorMessage>}
           </div>
-
             {/* Login Link */}
           <div className="text-right">
             <Link to="/auth/login" className="font-semibold text-sm">
               ¿Ya tienes una cuenta? <span className="text-yellow-400 hover:text-yellow-500 transition font-bold underline">Inicia sesión</span>
             </Link>
           </div>
-
           {/* Submit Button */}
           <Button
             type="submit"
@@ -83,7 +77,6 @@ export default function ForgotPasswordView() {
             {isPending ? 'Enviando...' : 'Enviar Solicitud'}
           </Button>
         </form>
-
         {/* Footer */}
         <div className="mt-8 pt-6 border-t border-gray-300 text-center">
           <p className="text-gray-500 text-sm">
@@ -91,7 +84,6 @@ export default function ForgotPasswordView() {
           </p>
         </div>
       </Card>
-
       {/* Note */}
       <div className="mt-6 text-center">
         <p className="text-gray-400 text-xs">📧 El enlace de recuperación será válido por 15 minutos por motivos de seguridad</p>

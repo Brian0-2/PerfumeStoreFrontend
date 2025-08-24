@@ -17,10 +17,11 @@ export default function router() {
         <Route element={<AuthLayout />}>
           <Route path="/" index element={<IndexView />} />
         </Route>
+        
         <Route element={<AppCustomerLayout />}>
           <Route path="/customer" element={<IndexCustomerView />} />
         </Route>
-        
+
         <Route path="/auth/login" element={<LoginView />} />
         <Route path="/auth/forgot-password" element={<ForgotPasswordView />} />
         <Route path="/auth/new-password/:token" element={<NewPasswordView />} />

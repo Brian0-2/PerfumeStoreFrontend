@@ -39,18 +39,13 @@ export default function LoginView() {
 
   return (
     <Container>
-
       <BackButton to="/" className="mb-6" text="Volver al inicio" />
-
       {/* Login Card */}
       <Card className="bg-white sm:p-10">
-
         {/* Header */}
         <CardHeader title="Iniciar Sesión" subtitle="Accede a tu cuenta para ver tus pedidos" />
-
         {/* Form */}
         <form onSubmit={handleSubmit(handleLogin)} className="w-full space-y-5 sm:space-y-6">
-
           {/* Email */}
           <div className="space-y-2">
             <Label htmlFor="email" className="text-black font-medium">Correo Electrónico</Label>
@@ -69,7 +64,6 @@ export default function LoginView() {
             </div>
             {errors.email && <ErrorMessage>{errors.email.message}</ErrorMessage>}
           </div>
-
           {/* Password */}
           <div className="space-y-2">
             <Label htmlFor="password" className="text-black font-medium">Contraseña</Label>
@@ -96,14 +90,12 @@ export default function LoginView() {
             </div>
             {errors.password && <ErrorMessage>{errors.password.message}</ErrorMessage>}
           </div>
-
           {/* Forgot Password Link */}
           <div className="text-right">
             <Link to="/auth/forgot-password" className="font-semibold text-sm">
               ¿Olvidaste tu contraseña? <span className="text-yellow-400 hover:text-yellow-500 transition font-medium underline">Restablecer</span>
             </Link>
           </div>
-
           {/* Submit Button */}
           <Button
             type="submit"
@@ -115,7 +107,6 @@ export default function LoginView() {
             {isPending ? 'Iniciando sesión...' : 'Iniciar Sesión'}
           </Button>
         </form>
-
         {/* Footer */}
         <div className="mt-8 pt-6 border-t border-gray-300 text-center">
           <p className="text-gray-500 text-sm">
@@ -123,7 +114,6 @@ export default function LoginView() {
           </p>
         </div>
       </Card>
-
       {/* Security Note */}
       <div className="mt-6 text-center">
         <p className="text-gray-400 text-xs">🔒 Tus datos están protegidos con encriptación.</p>

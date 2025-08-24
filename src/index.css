@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
 html, body {
-  overflow-x: hidden; /* Quita cualquier scroll horizontal */
+  overflow-x: hidden;
 }
 
