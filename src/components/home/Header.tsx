@@ -71,7 +71,7 @@ export default function Header() {
 
                                     <Button
                                         size="sm"
-                                        onClick={() => navigate("/dashboard")}
+                                        onClick={() => navigate("/customer")}
                                         className="text-gray-700 hover:text-yellow-600 transition duration-300 flex items-center gap-2"
                                     >
                                         <Package className="w-4 h-4" />
