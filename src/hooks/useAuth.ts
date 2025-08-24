@@ -6,11 +6,13 @@ export const useAuth = () => {
     const queryClient = useQueryClient();
     const navigate = useNavigate();
 
-    const { data, isError, isLoading } = useQuery({
-        queryKey: ['user'],
+    const { data, isLoading, isError } = useQuery({
+        queryKey: ["user"],
         queryFn: getUser,
         retry: 1,
-        refetchOnWindowFocus: false,
+        refetchOnWindowFocus: false, // evita refetch al cambiar de pestaña
+        staleTime: 1000 * 60 * 5,    // 5 minutos sin volver a consultar
+        enabled: !!localStorage.getItem("AUTH_TOKEN"), // solo si hay token
     });
 
     const logout = () => {
@@ -20,5 +22,5 @@ export const useAuth = () => {
         return navigate("/");
     };
 
-    return { data, isError, isLoading, logout }
-}
+    return { data, isError, isLoading, logout };
+};

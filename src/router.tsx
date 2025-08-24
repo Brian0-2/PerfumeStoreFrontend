@@ -10,6 +10,7 @@ import AppCustomerLayout from "@/layouts/AppCustomerLayout";
 import IndexCustomerView from "@/views/customer/IndexCustomerView";
 import IndexAdminView from "./views/admin/IndexAdminView";
 import AppAdminLayout from "./layouts/AppAdminLayout";
+import ProtectedRoute from "./layouts/ProtectedRoute";
 
 export default function router() {
   return (
@@ -20,13 +21,15 @@ export default function router() {
           <Route path="/" index element={<IndexView />} />
         </Route>
 
-        <Route element={<AppCustomerLayout />}>
-          <Route path="/customer" element={<IndexCustomerView />} />
+        <Route path="/protected/*" element={<ProtectedRoute />}>
+          <Route element={<AppAdminLayout />}>
+            <Route path="admin" element={<IndexAdminView />} />
+          </Route>
+          <Route element={<AppCustomerLayout />}>
+            <Route path="customer" element={<IndexCustomerView />} />
+          </Route>
         </Route>
 
-        <Route element={<AppAdminLayout />}>
-          <Route path="/admin" element={<IndexAdminView />} />
-        </Route>
 
         <Route path="/auth/login" element={<LoginView />} />
         <Route path="/auth/forgot-password" element={<ForgotPasswordView />} />

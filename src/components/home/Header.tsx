@@ -1,6 +1,6 @@
 import { companyInfo } from "@/data/index";
 import { useAuth } from "@/hooks/useAuth";
-import { Menu, X, User, LogOut, Package } from "lucide-react";
+import { Menu, X, User, LogOut, Package, LogIn } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
@@ -71,7 +71,7 @@ export default function Header() {
 
                                     <Button
                                         size="sm"
-                                        onClick={() => navigate("/customer")}
+                                        onClick={() => navigate("/protected/customer")}
                                         className="text-gray-700 hover:text-yellow-600 transition duration-300 flex items-center gap-2"
                                     >
                                         <Package className="w-4 h-4" />
@@ -155,12 +155,12 @@ export default function Header() {
                                         </a>
                                     ))}
 
-                                    {user && (
+                                    {user ? (
                                         <div className="pt-3 border-t space-y-2">
                                             <Button
                                                 size="sm"
                                                 onClick={() => {
-                                                    navigate("/dashboard");
+                                                    navigate("/protected/customer");
                                                     setIsMenuOpen(false);
                                                 }}
                                                 className="w-full justify-start flex items-center gap-2"
@@ -176,6 +176,20 @@ export default function Header() {
                                             >
                                                 <LogOut className="w-4 h-4" />
                                                 Cerrar Sesión
+                                            </Button>
+                                        </div>
+                                    ) : (
+                                        <div className="pt-3 border-t space-y-2">
+                                            <Button
+                                                size="sm"
+                                                onClick={() => {
+                                                    navigate("/auth/login");
+                                                    setIsMenuOpen(false);
+                                                }}
+                                                className="w-full justify-start flex items-center gap-2"
+                                            >
+                                                <LogIn className="w-4 h-4" />
+                                                Iniciar Sesión
                                             </Button>
                                         </div>
                                     )}

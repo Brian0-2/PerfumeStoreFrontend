@@ -5,6 +5,7 @@ import { useMutation } from "@tanstack/react-query";
 import { Eye, EyeOff, Lock, Mail } from "lucide-react";
 import { login } from "@/api/AuthAPI";
 import { toast } from "@/ui/Sonner";
+import type { LoginForm } from '@/types/index';
 import Label from "@/ui/Label";
 import Input from "@/ui/Input";
 import Button from "@/ui/Button";
@@ -14,21 +15,19 @@ import Container from "@/components/auth/Container";
 import BackButton from "@/components/auth/BackButton";
 import Card from "@/components/auth/Card";
 import CardHeader from "@/components/auth/CardHeader";
-import type { LoginForm } from '@/types/index';
-
 
 export default function LoginView() {
   const [showPassword, setShowPassword] = useState(false);
-  const navigate = useNavigate();
 
   const initialValues: LoginForm = { email: '', password: '' };
   const { register, handleSubmit, formState: { errors } } = useForm({ defaultValues: initialValues });
+  const navigate = useNavigate();
 
   const { mutate, isPending } = useMutation({
     mutationFn: login,
     onSuccess: () => {
       toast.success("Bienvenido de nuevo!");
-      navigate('/customer');
+      navigate("/protected", { replace: true });
     },
     onError: (error) => {
       toast.error(error.message);
