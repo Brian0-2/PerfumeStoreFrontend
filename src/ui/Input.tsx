@@ -1,8 +1,8 @@
 
 type InputProps = {
-  id: string;
-  type: string;
-  placeholder: string;
+  id?: string;
+  type?: string;
+  placeholder?: string;
   className?: string;
 };
 

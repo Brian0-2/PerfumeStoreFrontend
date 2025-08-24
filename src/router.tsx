@@ -8,6 +8,8 @@ import ForgotPasswordView from "@/views/auth/ForgotPasswordView";
 import NewPasswordView from "@/views/auth/NewPasswordView";
 import AppCustomerLayout from "@/layouts/AppCustomerLayout";
 import IndexCustomerView from "@/views/customer/IndexCustomerView";
+import IndexAdminView from "./views/admin/IndexAdminView";
+import AppAdminLayout from "./layouts/AppAdminLayout";
 
 export default function router() {
   return (
@@ -17,9 +19,13 @@ export default function router() {
         <Route element={<AuthLayout />}>
           <Route path="/" index element={<IndexView />} />
         </Route>
-        
+
         <Route element={<AppCustomerLayout />}>
           <Route path="/customer" element={<IndexCustomerView />} />
+        </Route>
+
+        <Route element={<AppAdminLayout />}>
+          <Route path="/admin" element={<IndexAdminView />} />
         </Route>
 
         <Route path="/auth/login" element={<LoginView />} />

@@ -20,7 +20,7 @@ export default function HeroCarousel() {
   const goToSlide = (index: number) => setCurrentSlide(index);
 
   return (
-    <section id="hero" className="relative h-screen overflow-hidden">
+    <section id="hero" className="relative h-screen">
       {/* Slides */}
       <div className="relative h-full">
         {heroSlides.map((slide, index) => (
@@ -33,10 +33,8 @@ export default function HeroCarousel() {
               className="absolute inset-0 bg-cover bg-center bg-no-repeat"
               style={{ backgroundImage: `url(${slide.image})` }}
             >
-              {/* Gradient overlay mejorado */}
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-800/70 via-pink-600/50 to-yellow-400/40" />
+              <div className="absolute inset-0 bg-[linear-gradient(135deg,#000000e6_20%,#6b21a8_90%)] opacity-70" />
             </div>
-
             {/* Content */}
             <div className="relative h-full flex items-center justify-center text-center px-4 sm:px-6 lg:px-8">
               <div className="container mx-auto space-y-6" data-aos="fade-up">
@@ -56,7 +54,6 @@ export default function HeroCarousel() {
           </div>
         ))}
       </div>
-
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
@@ -65,7 +62,6 @@ export default function HeroCarousel() {
       >
         <ChevronLeft className="w-6 h-6 text-white" />
       </button>
-
       <button
         onClick={nextSlide}
         className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors z-10"
@@ -73,7 +69,6 @@ export default function HeroCarousel() {
       >
         <ChevronRight className="w-6 h-6 text-white" />
       </button>
-
       {/* Slide Indicators */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-2">
         {heroSlides.map((_, index) => (
@@ -88,7 +83,6 @@ export default function HeroCarousel() {
           />
         ))}
       </div>
-
       {/* Scroll Indicator */}
       <div className="absolute bottom-20 -left-2">
         <span className="text-sm rotate-90 whitespace-nowrap flex items-center">

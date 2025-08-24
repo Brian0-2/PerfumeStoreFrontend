@@ -80,20 +80,20 @@ export const heroSlides = [
     title: "Fragancias de Lujo",
     subtitle: "Descubre los perfumes más exclusivos del mundo",
     description: "Ofrecemos una selección curada de las mejores fragancias de marcas prestigiosas, garantizando autenticidad y calidad premium.",
-    image: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=800&h=600&fit=crop",
+    image: "hero-1.jpg",
   },
   {
     id: 2,
     title: "Quiénes Somos",
     subtitle: "Expertos en fragancias con más de 10 años de experiencia",
     description: "Somos una boutique especializada en perfumes de alta gama, comprometidos con brindar una experiencia de compra única y personalizada.",
-    image: "https://images.unsplash.com/photo-1563170351-be82bc888aa4?w=800&h=600&fit=crop",
+    image: "/hero-2.jpg",
   },
   {
     id: 3,
     title: "Qué Ofrecemos",
     subtitle: "Servicio personalizado y asesoría experta",
-    image: "https://images.unsplash.com/photo-1594736797933-d0a8ba28a0ad?w=800&h=600&fit=crop",
+    image: "/hero-3.jpg",
   }
 ];
 

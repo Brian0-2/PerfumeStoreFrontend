@@ -1,3 +1,4 @@
+import { HeaderComponent } from "@/components/customer/HeaderComponent";
 import { useAuth } from "@/hooks/useAuth";
 import FullScreenLoader from "@/ui/FullScreenLoader";
 import { Navigate, Outlet } from "react-router-dom";
@@ -10,7 +11,7 @@ export default function AppCustomerLayout() {
 
   if(user) return (
     <>
-      <h1>AppCustomerLayout</h1>
+      <HeaderComponent />
       <Outlet />
     </>
   )

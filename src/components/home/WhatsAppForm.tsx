@@ -5,6 +5,8 @@ import { MessageCircle, X } from "lucide-react";
 import ReactDOM from "react-dom";
 import { companyInfo } from "@/data/index";
 import Button from "@/ui/Button";
+import Input from "@/ui/Input";
+import Label from "@/ui/Label";
 
 type FormValues = {
     nombre: string;
@@ -47,11 +49,9 @@ Estos son mis datos:
   window.open(url, "_blank");
   setIsOpen(false);
 };
-
-
     return (
         <>
-            {/* Botón principal */}
+            {/* Principal Button */}
             <button
                 onClick={() => setIsOpen(true)}
                 className={`cursor-pointer ${className}`}
@@ -59,8 +59,6 @@ Estos son mis datos:
               <MessageCircle className="w-5 h-5 mr-2" />
                 {text || "WhatsApp"}
             </button>
-
-            {/* Portal para asegurar que el modal se renderice sobre todo */}
             {typeof document !== "undefined" &&
                 ReactDOM.createPortal(
                     <AnimatePresence>
@@ -79,25 +77,25 @@ Estos son mis datos:
                                     className="bg-white rounded-2xl shadow-2xl w-full max-w-md p-6 relative"
                                 >
                                     {/* Botón cerrar */}
-                                    <button
+                                    <Button
                                         onClick={() => setIsOpen(false)}
                                         className="absolute top-4 right-4 text-gray-500 hover:bg-red-500 hover:text-white cursor-pointer"
                                     >
                                         <X size={24} />
-                                    </button>
+                                    </Button>
 
                                     <h2 className="text-xl font-bold text-gray-800 mb-4">
                                         Enviar mensaje por WhatsApp
                                     </h2>
 
-                                    {/* Formulario */}
+                                    {/* Form */}
                                     <form
                                         onSubmit={handleSubmit(handleWhatsApp)}
                                         className="space-y-4"
                                     >
                                         <div>
-                                            <label className="block text-sm font-medium">Nombre</label>
-                                            <input
+                                            <Label className="block text-sm font-medium">Nombre</Label>
+                                            <Input
                                                 {...register("nombre", {
                                                     required: "El nombre es obligatorio",
                                                 })}
@@ -111,8 +109,8 @@ Estos son mis datos:
                                         </div>
 
                                         <div>
-                                            <label className="block text-sm font-medium">Apellidos</label>
-                                            <input
+                                            <Label className="block text-sm font-medium">Apellidos</Label>
+                                            <Input
                                                 {...register("apellidos", {
                                                     required: "Los apellidos son obligatorios",
                                                 })}
@@ -126,8 +124,8 @@ Estos son mis datos:
                                         </div>
 
                                         <div>
-                                            <label className="block text-sm font-medium">Domicilio</label>
-                                            <input
+                                            <Label className="block text-sm font-medium">Domicilio</Label>
+                                            <Input
                                                 {...register("domicilio", {
                                                     required: "El domicilio es obligatorio",
                                                 })}
@@ -141,10 +139,10 @@ Estos son mis datos:
                                         </div>
 
                                         <div>
-                                            <label className="block text-sm font-medium">
+                                            <Label className="block text-sm font-medium">
                                                 Código Postal
-                                            </label>
-                                            <input
+                                            </Label>
+                                            <Input
                                                 {...register("codigoPostal", {
                                                     required: "El código postal es obligatorio",
                                                     pattern: {
@@ -163,7 +161,7 @@ Estos son mis datos:
                                         </div>
 
                                         <div>
-                                            <label className="block text-sm font-medium">Mensaje</label>
+                                            <Label className="block text-sm font-medium">Mensaje</Label>
                                             <textarea
                                                 {...register("mensaje", {
                                                     required: "El mensaje es obligatorio",
