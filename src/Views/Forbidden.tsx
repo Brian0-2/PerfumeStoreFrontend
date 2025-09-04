@@ -1,4 +1,5 @@
 import ErrorMessage from "@/ui/ErrorMessage";
+import { route } from "@/utils/routeHandler";
 import { Link } from "react-router-dom";
 
 type FooterProps = {
@@ -24,13 +25,13 @@ const Forbidden = ({ errorMessage }: FooterProps) => {
         {/* Action button */}
         <div className="mt-6 flex gap-4 justify-center">
           <Link
-            to="/"
+            to={route("HOME")}
             className="px-6 py-2 bg-purple-700 text-white rounded-lg shadow-md hover:bg-purple-800 transition"
           >
             Ir al inicio
           </Link>
           <Link
-            to="/auth/login"
+            to={route("LOGIN")}
             className="px-6 py-2 bg-purple-700 text-white rounded-lg shadow-md hover:bg-purple-800 transition"
           >
             Iniciar sesión

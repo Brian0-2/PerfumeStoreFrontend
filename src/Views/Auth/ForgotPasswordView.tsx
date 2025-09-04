@@ -14,6 +14,7 @@ import Container from "@/components/auth/Container";
 import BackButton from "@/components/auth/BackButton";
 import Card from "@/components/auth/Card";
 import CardHeader from "@/components/auth/CardHeader";
+import { route } from '@/utils/routeHandler';
 
 
 export default function ForgotPasswordView() {
@@ -35,7 +36,7 @@ export default function ForgotPasswordView() {
 
   return (
     <Container>
-      <BackButton to="/" className="mb-6" text="Volver al inicio" />
+      <BackButton to={route("HOME") as string} className="mb-6" text="Volver al inicio" />
       {/* Login Card */}
       <Card className="bg-white sm:p-10">
         {/* Header */}
@@ -62,7 +63,7 @@ export default function ForgotPasswordView() {
           </div>
             {/* Login Link */}
           <div className="text-right">
-            <Link to="/auth/login" className="font-semibold text-sm">
+            <Link to={ route("LOGIN") as string } className="font-semibold text-sm">
               ¿Ya tienes una cuenta? <span className="text-yellow-400 hover:text-yellow-500 transition font-bold underline">Inicia sesión</span>
             </Link>
           </div>

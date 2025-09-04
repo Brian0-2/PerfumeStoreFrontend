@@ -1,3 +1,4 @@
+import { route } from "@/utils/routeHandler";
 import { Link } from "react-router-dom";
 
 const NotFound = () => {
@@ -18,7 +19,7 @@ const NotFound = () => {
         {/* Action button */}
         <div className="mt-6 flex gap-4 justify-center">
           <Link
-            to="/"
+            to={route("HOME")}
             className="px-6 py-2 bg-purple-700 text-white rounded-lg shadow-md hover:bg-purple-800 transition"
           >
             Ir al inicio

@@ -98,7 +98,6 @@ export default function ContactSection() {
                   className='bg-[#FFC107] hover:bg-[#FFB300] text-gray-900 px-6 py-3 text-lg font-semibold rounded-lg transition-all duration-300 shadow-md hover:shadow-lg flex items-center'
                   text='Comenzar Ahora'
                 />
-
             </div>
 
 

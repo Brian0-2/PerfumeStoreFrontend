@@ -1,4 +1,3 @@
-'use client';
 import { Toaster, toast as sonnerToast } from 'sonner';
 import { FaCheck, FaTimes } from 'react-icons/fa';
 import { FaCircleInfo } from 'react-icons/fa6';

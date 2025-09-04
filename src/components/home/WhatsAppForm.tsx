@@ -9,14 +9,15 @@ import Input from "@/ui/Input";
 import Label from "@/ui/Label";
 
 type FormValues = {
-    nombre: string;
-    apellidos: string;
-    domicilio: string;
-    codigoPostal: string;
-    mensaje: string;
+    name: string;
+    lastName: string;
+    address: string;
+    email: string;
+    phone: string;
+    message: string;
 };
 
-type WhatsAppFormProps = {  
+type WhatsAppFormProps = {
     className?: string;
     text?: string;
 }
@@ -30,25 +31,26 @@ export default function WhatsAppForm({ className, text }: WhatsAppFormProps) {
         formState: { errors },
     } = useForm<FormValues>();
 
-const handleWhatsApp = (data: FormValues) => {
-const message = `
+    const handleWhatsApp = (data: FormValues) => {
+        const message = `
 Hola, me interesa conocer más sobre sus productos y servicios.
 Estos son mis datos:
 
-\u{1F642} Nombre: ${data.nombre} ${data.apellidos}
-\u{1F3E0} Domicilio: ${data.domicilio}
-\u{1F4EE} Código Postal: ${data.codigoPostal}
-\u{1F4DD} Mensaje: ${data.mensaje}
+🥺 Nombre: ${data.name} ${data.lastName}
+🏠 Domicilio: ${data.address}
+📱 Celular: ${data.phone}
+📩 Correo: ${data.email}
+📝 Mensaje: ${data.message}
 `;
 
-  const url = `https://wa.me/${companyInfo.contact.whatsapp.replace(
-    /\s+/g,
-    ""
-  )}?text=${encodeURIComponent(message)}`;
+        const url = `https://wa.me/${companyInfo.contact.whatsapp.replace(
+            /\s+/g,
+            ""
+        )}?text=${encodeURIComponent(message)}`;
 
-  window.open(url, "_blank");
-  setIsOpen(false);
-};
+        window.open(url, "_blank");
+        setIsOpen(false);
+    };
     return (
         <>
             {/* Principal Button */}
@@ -56,7 +58,7 @@ Estos son mis datos:
                 onClick={() => setIsOpen(true)}
                 className={`cursor-pointer ${className}`}
             >
-              <MessageCircle className="w-5 h-5 mr-2" />
+                <MessageCircle className="w-5 h-5 mr-2" />
                 {text || "WhatsApp"}
             </button>
             {typeof document !== "undefined" &&
@@ -64,7 +66,7 @@ Estos son mis datos:
                     <AnimatePresence>
                         {isOpen && (
                             <motion.div
-                                className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70"
+                                className="fixed inset-0 z-50 flex items-center justify-center bg-black/70"
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
@@ -96,14 +98,14 @@ Estos son mis datos:
                                         <div>
                                             <Label className="block text-sm font-medium">Nombre</Label>
                                             <Input
-                                                {...register("nombre", {
+                                                {...register("name", {
                                                     required: "El nombre es obligatorio",
                                                 })}
                                                 className="w-full mt-1 p-2 border rounded-lg"
                                             />
-                                            {errors.nombre && (
+                                            {errors.name && (
                                                 <p className="text-red-500 text-sm">
-                                                    {errors.nombre.message}
+                                                    {errors.name.message}
                                                 </p>
                                             )}
                                         </div>
@@ -111,14 +113,14 @@ Estos son mis datos:
                                         <div>
                                             <Label className="block text-sm font-medium">Apellidos</Label>
                                             <Input
-                                                {...register("apellidos", {
+                                                {...register("lastName", {
                                                     required: "Los apellidos son obligatorios",
                                                 })}
                                                 className="w-full mt-1 p-2 border rounded-lg"
                                             />
-                                            {errors.apellidos && (
+                                            {errors.lastName && (
                                                 <p className="text-red-500 text-sm">
-                                                    {errors.apellidos.message}
+                                                    {errors.lastName.message}
                                                 </p>
                                             )}
                                         </div>
@@ -126,36 +128,58 @@ Estos son mis datos:
                                         <div>
                                             <Label className="block text-sm font-medium">Domicilio</Label>
                                             <Input
-                                                {...register("domicilio", {
+                                                {...register("address", {
                                                     required: "El domicilio es obligatorio",
                                                 })}
                                                 className="w-full mt-1 p-2 border rounded-lg"
                                             />
-                                            {errors.domicilio && (
+                                            {errors.address && (
                                                 <p className="text-red-500 text-sm">
-                                                    {errors.domicilio.message}
+                                                    {errors.address.message}
                                                 </p>
                                             )}
                                         </div>
 
                                         <div>
                                             <Label className="block text-sm font-medium">
-                                                Código Postal
+                                                Numero de Celular
                                             </Label>
                                             <Input
-                                                {...register("codigoPostal", {
-                                                    required: "El código postal es obligatorio",
+                                                {...register("phone", {
+                                                    required: "El teléfono es obligatorio",
                                                     pattern: {
-                                                        value: /^[0-9]{5}$/,
+                                                        value: /^[0-9]{10}$/,
                                                         message:
-                                                            "Debe ser un código postal válido de 5 dígitos",
+                                                            "Debe ser un número de teléfono válido de 10 dígitos",
                                                     },
                                                 })}
                                                 className="w-full mt-1 p-2 border rounded-lg"
                                             />
-                                            {errors.codigoPostal && (
+                                            {errors.phone && (
                                                 <p className="text-red-500 text-sm">
-                                                    {errors.codigoPostal.message}
+                                                    {errors.phone.message}
+                                                </p>
+                                            )}
+                                        </div>
+
+                                        <div>
+                                            <Label className="block text-sm font-medium">
+                                                Correo Electrónico
+                                            </Label>
+                                            <Input
+                                                {...register("email", {
+                                                    required: "El correo electrónico es obligatorio",
+                                                    pattern: {
+                                                        value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                                                        message:
+                                                            "Debe ser un correo electrónico válido",
+                                                    },
+                                                })}
+                                                className="w-full mt-1 p-2 border rounded-lg"
+                                            />
+                                            {errors.email && (
+                                                <p className="text-red-500 text-sm">
+                                                    {errors.email.message}
                                                 </p>
                                             )}
                                         </div>
@@ -163,15 +187,15 @@ Estos son mis datos:
                                         <div>
                                             <Label className="block text-sm font-medium">Mensaje</Label>
                                             <textarea
-                                                {...register("mensaje", {
+                                                {...register("message", {
                                                     required: "El mensaje es obligatorio",
                                                 })}
                                                 rows={3}
                                                 className="w-full mt-1 p-2 border rounded-lg"
                                             />
-                                            {errors.mensaje && (
+                                            {errors.message && (
                                                 <p className="text-red-500 text-sm">
-                                                    {errors.mensaje.message}
+                                                    {errors.message.message}
                                                 </p>
                                             )}
                                         </div>

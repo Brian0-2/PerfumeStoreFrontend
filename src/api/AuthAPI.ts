@@ -59,7 +59,7 @@ export async function newPassword( {formData, token}: { formData: NewPasswordFor
 
 export async function tokenConfirm(  token: string ) {
     try {
-      const url = `/auth/invite/${token}`;
+      const url = `/auth/valid-token-user/${token}`;
       const { data } = await api.get(url);
       return data;
     } catch (error) {
