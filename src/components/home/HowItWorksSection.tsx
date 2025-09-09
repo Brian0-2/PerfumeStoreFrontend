@@ -6,7 +6,7 @@ export default function HowItWorksSection() {
     <section id="how-it-works" className="py-16 sm:py-24 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16" data-aos="fade-up">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold bg-gradient-to-r from-black via-50% to-pink-600 bg-clip-text text-transparent mb-6 p-2">
             ¿Cómo Funciona Nuestra Plataforma?
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto">
@@ -49,11 +49,11 @@ export default function HowItWorksSection() {
 
         {/* Call to Action */}
         <div className="text-center" data-aos="fade-up" data-aos-delay={900}>
-          <div className="rounded-2xl p-8 sm:p-12 shadow-xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white">
+          <div className="rounded-2xl p-8 sm:p-12 shadow-xl bg-gradient-to-r from-black via-50% to-pink-600 text-yellow-500">
             <h3 className="text-2xl sm:text-3xl font-bold mb-4">
               ¿Listo para Comenzar?
             </h3>
-            <p className="mb-8 text-lg">
+            <p className="mb-8 text-lg text-white">
               Contáctanos hoy mismo y descubre la facilidad de gestionar tus pedidos 
               de perfumes con total transparencia y seguridad.
             </p>

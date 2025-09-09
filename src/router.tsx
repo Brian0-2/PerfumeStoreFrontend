@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes, useNavigate } from "react-router";
+import { BrowserRouter, Route, Routes } from "react-router";
 import AuthLayout from "@/layouts/AuthLayout";
 import IndexView from "@/views/IndexView";
 import LoginView from "@/views/auth/LoginView";
@@ -7,7 +7,6 @@ import NotFound from "@/views/NotFound";
 import ForgotPasswordView from "@/views/auth/ForgotPasswordView";
 import NewPasswordView from "@/views/auth/NewPasswordView";
 import AppCustomerLayout from "@/layouts/AppCustomerLayout";
-import IndexCustomerView from "@/views/customer/IndexCustomerView";
 import IndexAdminView from "./views/admin/IndexAdminView";
 import AppAdminLayout from "./layouts/AppAdminLayout";
 import ProtectedRoute from "./layouts/ProtectedRoute";
@@ -29,7 +28,6 @@ export default function router() {
             <Route path="admin" element={<IndexAdminView />} />
           </Route>
           <Route element={<AppCustomerLayout />}>
-            <Route path="customer/dashboard" element={<IndexCustomerView />} />
             <Route path="customer/orders" element={<OrderCustomerView />} />
             <Route path="customer/payments" element={<PaymentCustomerView />} />
             <Route path="customer/profile" element={<ProfileCustomerView />} />

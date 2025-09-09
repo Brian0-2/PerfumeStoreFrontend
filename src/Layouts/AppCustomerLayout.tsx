@@ -1,11 +1,13 @@
-import { HeaderComponent } from "@/components/customer/HeaderComponent";
+import { HeaderBottomComponent } from "@/components/customer/HeaderBottomComponent";
+import HeaderTopComponent from "@/components/customer/HeaderTopComponent";
 import { Outlet } from "react-router-dom";
 
 export default function AppCustomerLayout() {
- return (
+  return (
     <>
-      <HeaderComponent />
-      <Outlet />
+      <HeaderTopComponent />
+        <Outlet />
+      <HeaderBottomComponent />
     </>
   )
 }

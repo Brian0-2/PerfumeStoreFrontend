@@ -8,7 +8,7 @@ type FooterProps = {
 
 const Forbidden = ({ errorMessage }: FooterProps) => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 px-4 bg-[linear-gradient(135deg,#000000e6_20%,#6b21a8_80%)]">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 px-4 bg-[linear-gradient(135deg,hsl(260,15%,8%)_0%,hsl(280,50%,25%)_50%,hsl(290,60%,35%)_100%)]">
       <div className="text-center">
         {/* Cod error */}
         <h1 className="text-9xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-purple-500">

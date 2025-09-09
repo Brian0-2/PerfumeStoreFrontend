@@ -28,7 +28,7 @@ export default function LoginView() {
     mutationFn: login,
     onSuccess: () => {
       toast.success("Bienvenido de nuevo!");
-      navigate("/protected/customer/dashboard", { replace: true });
+      navigate(route("CUSTOMER_ORDERS"), { replace: true });
     },
     onError: (error) => {
       toast.error(error.message);
@@ -39,7 +39,7 @@ export default function LoginView() {
 
   return (
     <Container>
-      <BackButton to={route("HOME") as string} className="mb-6" text="Volver al inicio" />
+      <BackButton to={route("HOME")} className="mb-6" text="Volver al inicio" />
       {/* Login Card */}
       <Card className="bg-white sm:p-10">
         {/* Header */}
@@ -92,7 +92,7 @@ export default function LoginView() {
           </div>
           {/* Forgot Password Link */}
           <div className="text-right">
-            <Link to={route("FORGOT_PASSWORD") as string} className="font-semibold text-sm">
+            <Link to={route("FORGOT_PASSWORD")} className="font-semibold text-sm">
               ¿Olvidaste tu contraseña? <span className="text-yellow-400 hover:text-yellow-500 transition font-medium underline">Restablecer</span>
             </Link>
           </div>

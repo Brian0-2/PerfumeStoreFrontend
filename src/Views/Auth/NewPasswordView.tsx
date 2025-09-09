@@ -5,6 +5,8 @@ import { Eye, EyeOff, Lock } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router-dom";
+import { getPasswordStrength } from "@/utils/getPasswordStrength";
+import { route } from "@/utils/routeHandler";
 import Button from "@/ui/Button";
 import Input from "@/ui/Input";
 import Label from "@/ui/Label";
@@ -14,10 +16,8 @@ import Card from "@/components/auth/Card";
 import CardHeader from "@/components/auth/CardHeader";
 import ErrorMessage from "@/ui/ErrorMessage";
 import type { NewPasswordForm } from "@/types/index";
-import { getPasswordStrength } from "@/utils/getPasswordStrength";
 import Forbidden from "../Forbidden";
 import PasswordUpdatedSuccessfully from "@/components/auth/PasswordUpdatedSuccessfully";
-import { route } from "@/utils/routeHandler";
 
 export default function NewPasswordView() {
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);

@@ -20,15 +20,17 @@ import { route } from '@/utils/routeHandler';
 export default function ForgotPasswordView() {
 
   const initialValues: ForgotPasswordForm = { email: '' };
-  const { register, handleSubmit, formState: { errors } } = useForm({ defaultValues: initialValues });
+  const { register,resetField, handleSubmit, formState: { errors } } = useForm({ defaultValues: initialValues });
 
   const { mutate, isPending } = useMutation({
     mutationFn: forgotPassword,
     onSuccess: (data) => {
       toast.success(data!.message);
+      resetField("email");
     },
     onError: (error) => {
       toast.error(error.message);
+      resetField("email");
     }
   });
 

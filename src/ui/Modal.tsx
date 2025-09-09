@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaTimes } from 'react-icons/fa';
 import { useEffect } from 'react';
+import Button from './Button';
 
 interface ModalProps {
     isOpen: boolean;
@@ -28,7 +29,7 @@ export default function Modal({ isOpen, onRequestClose, contentLabel, children }
     return (
         <AnimatePresence>
             {isOpen && (
-                <div className="fixed inset-0 z-[999] flex items-center justify-center px-4">
+                <main className="fixed inset-0 z-50 flex items-center justify-center px-4">
                     {/* Overlay */}
                     <motion.div
                         className="absolute inset-0 bg-black/40 backdrop-blur-sm"
@@ -47,23 +48,25 @@ export default function Modal({ isOpen, onRequestClose, contentLabel, children }
                         transition={{ duration: 0.25, ease: 'easeOut' }}
                     >
                         {/* Header */}
-                        <div className="flex items-center justify-between w-full border-b pb-3 mb-4">
+                        <header className="flex items-center justify-between w-full border-b pb-3 mb-4">
                             <h2 className="flex-1 text-lg font-semibold text-gray-900 text-center">
                                 {contentLabel}
                             </h2>
 
-                            <button
+                            <Button
                                 onClick={onRequestClose}
                                 className="text-gray-400 hover:text-gray-600 cursor-pointer transition-all ml-2"
                                 aria-label="Cerrar modal"
                             >
                                 <FaTimes className="w-5 h-5" />
-                            </button>
-                        </div>
+                            </Button>
+                        </header>
                         {/* Body */}
-                        <div className="text-gray-700">{children}</div>
+                        <section className="text-gray-700">
+                            {children}
+                        </section>
                     </motion.div>
-                </div>
+                </main>
             )}
         </AnimatePresence>
     );

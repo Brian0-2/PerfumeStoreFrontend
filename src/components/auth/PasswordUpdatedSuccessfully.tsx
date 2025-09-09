@@ -7,12 +7,10 @@ type PasswordUpdatedSuccessfullyProps = {
 }
 
 export default function PasswordUpdatedSuccessfully({ onClick, feedback }: PasswordUpdatedSuccessfullyProps) {
-
-
   return (
-    <div className="min-h-screen gradient-hero flex items-center justify-center p-4">
+    <div className="min-h-screen flex items-center justify-center p-4">
       <div className="w-full max-w-md">
-        <div className="gradient-card rounded-2xl p-8 shadow-elegant text-center">
+        <div className="rounded-2xl p-8 shadow-elegant text-center">
           <div className="w-16 h-16 bg-green-200 rounded-full flex items-center justify-center mx-auto mb-6">
             <CheckCircle className="w-8 h-8 text-green-600" />
           </div>

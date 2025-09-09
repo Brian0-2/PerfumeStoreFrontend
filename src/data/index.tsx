@@ -282,3 +282,196 @@ export const companyInfo = {
     tiktok: "@essenceboutique"
   }
 };
+
+export const customerOrders = {
+  "data": [
+    {
+      "id": 1,
+      "is_paid": true,
+      "total": "1500.00",
+      "amount_paid": "1500.00",
+      "createdAt": "2025-09-01T10:15:00.000Z",
+      "updatedAt": "2025-09-01T10:15:00.000Z",
+      "order_status": { "name": "Completado" }
+    },
+    {
+      "id": 2,
+      "is_paid": false,
+      "total": "4200.00",
+      "amount_paid": "0.00",
+      "createdAt": "2025-09-02T12:45:00.000Z",
+      "updatedAt": "2025-09-02T12:45:00.000Z",
+      "order_status": { "name": "Pendiente" }
+    },
+    {
+      "id": 3,
+      "is_paid": true,
+      "total": "2500.00",
+      "amount_paid": "2500.00",
+      "createdAt": "2025-09-02T18:30:00.000Z",
+      "updatedAt": "2025-09-02T18:30:00.000Z",
+      "order_status": { "name": "Completado" }
+    },
+    {
+      "id": 4,
+      "is_paid": false,
+      "total": "3600.00",
+      "amount_paid": "1200.00",
+      "createdAt": "2025-09-03T09:20:00.000Z",
+      "updatedAt": "2025-09-03T09:20:00.000Z",
+      "order_status": { "name": "Pendiente" }
+    },
+    {
+      "id": 5,
+      "is_paid": true,
+      "total": "5100.00",
+      "amount_paid": "5100.00",
+      "createdAt": "2025-09-03T14:10:00.000Z",
+      "updatedAt": "2025-09-03T14:10:00.000Z",
+      "order_status": { "name": "Completado" }
+    },
+    {
+      "id": 6,
+      "is_paid": false,
+      "total": "2100.00",
+      "amount_paid": "0.00",
+      "createdAt": "2025-09-04T11:05:00.000Z",
+      "updatedAt": "2025-09-04T11:05:00.000Z",
+      "order_status": { "name": "Pendiente" }
+    },
+    {
+      "id": 7,
+      "is_paid": true,
+      "total": "3300.00",
+      "amount_paid": "3300.00",
+      "createdAt": "2025-09-04T19:45:00.000Z",
+      "updatedAt": "2025-09-04T19:45:00.000Z",
+      "order_status": { "name": "Completado" }
+    },
+    {
+      "id": 8,
+      "is_paid": false,
+      "total": "2700.00",
+      "amount_paid": "0.00",
+      "createdAt": "2025-09-05T08:00:00.000Z",
+      "updatedAt": "2025-09-05T08:00:00.000Z",
+      "order_status": { "name": "Pendiente" }
+    },
+    {
+      "id": 9,
+      "is_paid": true,
+      "total": "4800.00",
+      "amount_paid": "4800.00",
+      "createdAt": "2025-09-05T15:25:00.000Z",
+      "updatedAt": "2025-09-05T15:25:00.000Z",
+      "order_status": { "name": "Completado" }
+    },
+    {
+      "id": 10,
+      "is_paid": false,
+      "total": "1900.00",
+      "amount_paid": "0.00",
+      "createdAt": "2025-09-06T09:10:00.000Z",
+      "updatedAt": "2025-09-06T09:10:00.000Z",
+      "order_status": { "name": "Pendiente" }
+    },
+    {
+      "id": 11,
+      "is_paid": true,
+      "total": "2500.00",
+      "amount_paid": "2500.00",
+      "createdAt": "2025-09-06T16:40:00.000Z",
+      "updatedAt": "2025-09-06T16:40:00.000Z",
+      "order_status": { "name": "Completado" }
+    },
+    {
+      "id": 12,
+      "is_paid": false,
+      "total": "3200.00",
+      "amount_paid": "800.00",
+      "createdAt": "2025-09-07T11:15:00.000Z",
+      "updatedAt": "2025-09-07T11:15:00.000Z",
+      "order_status": { "name": "Pendiente" }
+    },
+    {
+      "id": 13,
+      "is_paid": true,
+      "total": "6100.00",
+      "amount_paid": "6100.00",
+      "createdAt": "2025-09-07T20:00:00.000Z",
+      "updatedAt": "2025-09-07T20:00:00.000Z",
+      "order_status": { "name": "Completado" }
+    },
+    {
+      "id": 14,
+      "is_paid": false,
+      "total": "2300.00",
+      "amount_paid": "0.00",
+      "createdAt": "2025-09-08T08:30:00.000Z",
+      "updatedAt": "2025-09-08T08:30:00.000Z",
+      "order_status": { "name": "Pendiente" }
+    },
+    {
+      "id": 15,
+      "is_paid": true,
+      "total": "4400.00",
+      "amount_paid": "4400.00",
+      "createdAt": "2025-09-08T18:15:00.000Z",
+      "updatedAt": "2025-09-08T18:15:00.000Z",
+      "order_status": { "name": "Completado" }
+    },
+    {
+      "id": 16,
+      "is_paid": false,
+      "total": "2800.00",
+      "amount_paid": "0.00",
+      "createdAt": "2025-09-09T10:20:00.000Z",
+      "updatedAt": "2025-09-09T10:20:00.000Z",
+      "order_status": { "name": "Pendiente" }
+    },
+    {
+      "id": 17,
+      "is_paid": true,
+      "total": "3700.00",
+      "amount_paid": "3700.00",
+      "createdAt": "2025-09-09T17:45:00.000Z",
+      "updatedAt": "2025-09-09T17:45:00.000Z",
+      "order_status": { "name": "Completado" }
+    },
+    {
+      "id": 18,
+      "is_paid": false,
+      "total": "2950.00",
+      "amount_paid": "0.00",
+      "createdAt": "2025-09-10T09:55:00.000Z",
+      "updatedAt": "2025-09-10T09:55:00.000Z",
+      "order_status": { "name": "Pendiente" }
+    },
+    {
+      "id": 19,
+      "is_paid": true,
+      "total": "5200.00",
+      "amount_paid": "5200.00",
+      "createdAt": "2025-09-10T18:25:00.000Z",
+      "updatedAt": "2025-09-10T18:25:00.000Z",
+      "order_status": { "name": "Completado" }
+    },
+    {
+      "id": 20,
+      "is_paid": false,
+      "total": "3100.00",
+      "amount_paid": "0.00",
+      "createdAt": "2025-09-11T11:10:00.000Z",
+      "updatedAt": "2025-09-11T11:10:00.000Z",
+      "order_status": { "name": "Pendiente" }
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "per_page": 10,
+    "current_page": 1,
+    "last_page": 2,
+    "from": 1,
+    "to": 10
+  }
+}

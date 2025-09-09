@@ -1,18 +1,17 @@
 import { useAuth } from '@/hooks/useAuth';
-import { Home, Package, CreditCard, User, LogOut } from 'lucide-react';
+import { FiHome, FiPackage, FiCreditCard, FiLogOut } from "react-icons/fi";
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import Modal from '@/ui/Modal';
 import Button from '@/ui/Button';
+import { route } from '@/utils/routeHandler';
 
 const navigationItems = [
-  { icon: Home, label: 'Inicio', path: '/protected/customer/dashboard' },
-  { icon: Package, label: 'Pedidos', path: '/protected/customer/orders' },
-  { icon: CreditCard, label: 'Pagos', path: '/protected/customer/payments' },
-  { icon: User, label: 'Perfil', path: '/protected/customer/profile' },
+  { icon: FiPackage, label: 'Pedidos', path: route("CUSTOMER_ORDERS") },
+  { icon: FiCreditCard, label: 'Pagos', path: route("CUSTOMER_PAYMENTS") },
 ];
 
-export function HeaderComponent() {
+export function HeaderBottomComponent() {
   const [openModal, setOpenModal] = useState(false);
   const { logout } = useAuth();
 
@@ -47,7 +46,7 @@ export function HeaderComponent() {
             onClick={handleLogout}
             className="flex flex-col items-center justify-center px-4 py-2 text-xs text-gray-700 hover:text-red-600 transition-colors"
           >
-            <LogOut className="w-5 h-5 mb-1" />
+            <FiLogOut className="w-5 h-5 mb-1" />
             <span>Salir</span>
           </Button>
         </div>

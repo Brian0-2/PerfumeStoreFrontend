@@ -9,10 +9,9 @@ export const ROUTES = {
   // Protected routes
 
   // Admin routes
-  ADMIN_DASHBOARD: "/protected/admin",
+  ADMIN_DASHBOARD: "/protected/admin/dashboard",
 
   // Customer routes
-  CUSTOMER_DASHBOARD: "/protected/customer/dashboard",
   CUSTOMER_ORDERS: "/protected/customer/orders",
   CUSTOMER_PAYMENTS: "/protected/customer/payments",
   CUSTOMER_PROFILE: "/protected/customer/profile",

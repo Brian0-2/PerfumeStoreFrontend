@@ -10,9 +10,9 @@ export const useAuth = () => {
         queryKey: ["user"],
         queryFn: getUser,
         retry: 1,
-        refetchOnWindowFocus: false, // evita refetch al cambiar de pestaña
-        staleTime: 1000 * 60 * 5,    // 5 minutos sin volver a consultar
-        enabled: !!localStorage.getItem("AUTH_TOKEN"), // solo si hay token
+        refetchOnWindowFocus: false,
+        staleTime: 1000 * 60 * 5,
+        enabled: !!localStorage.getItem("AUTH_TOKEN"),
     });
 
     const logout = () => {

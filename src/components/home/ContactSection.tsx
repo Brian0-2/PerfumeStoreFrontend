@@ -8,7 +8,7 @@ export default function ContactSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <div className="text-center mb-16" data-aos="fade-up">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold bg-gradient-to-r from-black via-50% to-pink-600 bg-clip-text text-transparent mb-6 p-2">
             Contáctanos
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
@@ -91,7 +91,7 @@ export default function ContactSection() {
             </div>
 
             {/* Call to Action */}
-            <div className="bg-[linear-gradient(135deg,#000000e6_20%,#6b21a8_80%)] rounded-2xl p-8 text-center text-white shadow-2xl">
+            <div className="bg-[linear-gradient(135deg,hsl(260,15%,8%)_0%,hsl(280,50%,25%)_50%,hsl(290,60%,35%)_100%)] rounded-2xl p-8 text-center text-white shadow-2xl">
               <h3 className="text-3xl font-bold mb-4">¿Listo para encontrar tu fragancia perfecta?</h3>
               <p className="mb-6 opacity-90 text-lg">Únete a más de 1000 clientes satisfechos que confían en nosotros</p>
                 <WhatsAppForm

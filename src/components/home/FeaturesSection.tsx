@@ -7,7 +7,7 @@ export default function FeaturesSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Features Header */}
         <div className="text-center mb-16" data-aos="fade-up">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold bg-gradient-to-r from-black via-50% to-pink-600 bg-clip-text text-transparent mb-6 p-2">
             ¿Por Qué Elegirnos?
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
